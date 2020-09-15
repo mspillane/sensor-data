@@ -9,7 +9,7 @@ def read():
     :return:
     """
     item = r.rpop(message_queue_name)
-    print('read=' + str(item))
+    # print('read=' + str(item))
     return item
 
 def read_messages():
@@ -21,9 +21,9 @@ def read_messages():
     count = 0
     while count < 3:
         item = r.rpop(message_queue_name)
-        print('read=' + str(item))
+        # print('read=' + str(item))
         if item:
-            print('yield:' + str(item))
+            # print('yield:' + str(item))
             yield item
         count += 1
 
@@ -33,7 +33,7 @@ def write(item):
     :param item:
     :return:
     """
-    print("Persist to database:" + str(item))
+    print("Write to message queue:" + str(item))
     r.lpush(message_queue_name, item)
 
 if __name__ == '__main__':
