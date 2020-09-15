@@ -6,11 +6,13 @@ FAHRENHEIT_UPPER_BOUND = 212  # Boiling point of water
 
 valid_types = ['Sensor']
 
+number_data_points = 7
+
 def generate():
     count = 0
-    while count < 7:
+    while count < number_data_points:
         data_point = {
-            'id': '111111',
+            'id': '111111', # TODO Update to randomly generate IDs
             'type': 'Sensor',
             'content': {
                 'temperature_f': random.randrange(FAHRENHEIT_LOWER_BOUND, FAHRENHEIT_UPPER_BOUND),

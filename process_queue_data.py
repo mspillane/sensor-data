@@ -27,7 +27,7 @@ def process_batch(batch):
     for p in processes:
         p.join()
 
-    print('consuming from queue:')
+    print('Results from batch write:')
     results = [output.get() for p in processes]
     print(results)
 
